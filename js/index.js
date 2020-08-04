@@ -1,5 +1,5 @@
 
-                            // MOUSEOVER event listener applied to H1
+                            // MOUSEOVER event listener applied to H1  1
 const pageHeading = document.querySelector('h1');
 pageHeading.addEventListener('mouseover', function(event){
     event.target.style.color = 'aqua';
@@ -49,7 +49,7 @@ navLink4.addEventListener('mouseover', function(event){
     }, 400)
 }, false)
 
-                            // WHEEL event listener applied to header image
+                            // WHEEL event listener applied to header image 2
 const busImg = document.querySelector('.intro img')
 let scale = 1;
 busImg.addEventListener('wheel', grow);
@@ -60,7 +60,7 @@ function grow(event){
     busImg.style.transform = `scale(${scale})`;
 }
 
-                            // SELECT event listener applied to all H2
+                            // SELECT event listener applied to all H2 3
 const pageSubHeadings = document.querySelectorAll('h2')
 
 const pageSubHead1 = pageSubHeadings[0]
@@ -74,19 +74,13 @@ function selectHeading(event){
 
 }
 
-                                // LOAD event listener
+                                // LOAD event listener 4
 window.addEventListener('load', (event) => {
     console.log('The page has been loaded.');
     // alert('The page is loaded')
 })
 
-                            // KEYDOWN event listener 
-// document.addEventListener('keydown', keyPressed);
-// function keyPressed(event){
-//     pageSubHead1.style.color = 'purple'
-//     pageSubHead2.style.fontWeight = 'bold'
-// }
-
+                            // KEYDOWN event listener 5
 document.addEventListener('keydown', keyPressed)
 function keyPressed(event){
     pageSubHeadings.forEach(item => {
@@ -94,13 +88,7 @@ function keyPressed(event){
     });
 }
 
-                            // DBL CLICK event listeners on <p>
-// const sectionImgs = document.querySelectorAll('img-content')
-// const sectionImg1 = sectionImgs[0];
-// sectionImg1.addEventListener('dblclick', function(event){
-//     sectionImg1.style.borderStyle = 'orange'
-// })
-
+                            // DBL CLICK event listeners on <p> 6
 const paras = document.querySelectorAll('.text-content p')
 const para1 = paras[0];
 const para2 = paras[1];
@@ -140,17 +128,30 @@ para4.addEventListener('dblclick', function(event){
 }, false)
 
 
-// SCROLL event listener 
+                            // SCROLL event listener 7
 
 let scroll = document.querySelector('header')
-    window.addEventListener('scroll', event =>{
+    document.addEventListener('scroll', event =>{
     scroll.style.backgroundColor = 'pink'
 
     setTimeout(function(){
-        event.target.style.color = "";
+        event.target.style.color = " ";
     }, 2000)
 }, false)
 
 
+// MOUSEDOWN 8 
+const bttns = document.querySelectorAll('.btn');
+
+document.addEventListener('mousedown', buttonClick)
+function buttonClick(event){
+    bttns.forEach(item => {
+        item.style.background = 'black'
+    });
+}
 
 
+
+// 9
+
+// 10
