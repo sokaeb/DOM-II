@@ -49,13 +49,108 @@ navLink4.addEventListener('mouseover', function(event){
     }, 400)
 }, false)
 
-// WHEEL event listener applied to header image
+                            // WHEEL event listener applied to header image
 const busImg = document.querySelector('.intro img')
 let scale = 1;
 busImg.addEventListener('wheel', grow);
 
 function grow(event){
-    scale += event.deltaY * -0.01;
-    scale = Math.min(Math.max(.125, scale), 4);
+    scale += event.deltaY * 0.1; // as wheel scrolls up or down, img grows incrementally 
+    scale = Math.min(Math.max(.5, scale), 1); // Math.min doesn't allow the image to grow bigger than default size, 
     busImg.style.transform = `scale(${scale})`;
-};
+}
+
+                            // SELECT event listener applied to all H2
+const pageSubHeadings = document.querySelectorAll('h2')
+
+const pageSubHead1 = pageSubHeadings[0]
+const pageSubHead2 = pageSubHeadings[1]
+const pageSubHead3 = pageSubHeadings[2]
+const pageSubHead4 = pageSubHeadings[3]
+
+pageSubHead1.addEventListener('select', selectHeading)
+
+function selectHeading(event){
+
+}
+
+                                // LOAD event listener
+window.addEventListener('load', (event) => {
+    console.log('The page has been loaded.');
+    // alert('The page is loaded')
+})
+
+                            // KEYDOWN event listener 
+// document.addEventListener('keydown', keyPressed);
+// function keyPressed(event){
+//     pageSubHead1.style.color = 'purple'
+//     pageSubHead2.style.fontWeight = 'bold'
+// }
+
+document.addEventListener('keydown', keyPressed)
+function keyPressed(event){
+    pageSubHeadings.forEach(item => {
+        item.style.color = 'purple'
+    });
+}
+
+                            // DBL CLICK event listeners on <p>
+// const sectionImgs = document.querySelectorAll('img-content')
+// const sectionImg1 = sectionImgs[0];
+// sectionImg1.addEventListener('dblclick', function(event){
+//     sectionImg1.style.borderStyle = 'orange'
+// })
+
+const paras = document.querySelectorAll('.text-content p')
+const para1 = paras[0];
+const para2 = paras[1];
+const para3 = paras[2];
+const para4 = paras[3];
+
+para1.addEventListener('dblclick', function(event){
+    para1.style.color = 'blue'
+
+    setTimeout(function(){
+        event.target.style.color = "";
+    }, 2000)
+}, false)
+
+para2.addEventListener('dblclick', function(event){
+    para2.style.color = 'violet'
+
+    setTimeout(function(){
+        event.target.style.color = "";
+    }, 3000)
+}, false)
+
+para3.addEventListener('dblclick', function(event){
+    para3.style.color = 'dodgerblue'
+
+    setTimeout(function(){
+        event.target.style.color = "";
+    }, 4000)
+}, false)
+
+para4.addEventListener('dblclick', function(event){
+    para4.style.color = 'rosybrown'
+
+    setTimeout(function(){
+        event.target.style.color = "";
+    }, 5000)
+}, false)
+
+
+// SCROLL event listener 
+
+let scroll = document.querySelector('header')
+    window.addEventListener('scroll', event =>{
+    scroll.style.backgroundColor = 'pink'
+
+    setTimeout(function(){
+        event.target.style.color = "";
+    }, 2000)
+}, false)
+
+
+
+
