@@ -115,7 +115,7 @@ para3.addEventListener('dblclick', function(event){
     para3.style.color = 'dodgerblue'
 
     setTimeout(function(){
-        event.target.style.color = "";
+        event.target.style.color = '';
     }, 4000)
 }, false)
 
@@ -123,24 +123,20 @@ para4.addEventListener('dblclick', function(event){
     para4.style.color = 'rosybrown'
 
     setTimeout(function(){
-        event.target.style.color = "";
+        event.target.style.color = '';
     }, 5000)
 }, false)
 
 
-                            // SCROLL event listener 7
+                            // SCROLL event listener to change header color 7
 
-let scroll = document.querySelector('header')
+let headerScroll = document.querySelector('header')
     document.addEventListener('scroll', event =>{
-    scroll.style.backgroundColor = 'pink'
-
-    setTimeout(function(){
-        event.target.style.color = " ";
-    }, 2000)
-}, false)
+    headerScroll.style.backgroundColor = 'pink'
+})
 
 
-// MOUSEDOWN 8 
+                            // MOUSEDOWN event listener to change button background color 8 
 const bttns = document.querySelectorAll('.btn');
 
 document.addEventListener('mousedown', buttonClick)
@@ -151,7 +147,32 @@ function buttonClick(event){
 }
 
 
+// MOUSEUP event listener to change H4 background color 9
 
-// 9
+document.addEventListener('mouseup', buttonC)
+function buttonC(event){
+    bttns.forEach(item => {
+        item.style.background = 'red'
+    });
 
-// 10
+    setTimeout(function(){
+        event.target.style.color = '';
+    }, 2000)
+}
+
+// RESIZE event listener 
+const headings4 = document.querySelectorAll('h4')
+
+heading4First = headings4[0];
+heading4Second = headings4[1];
+heading4Third = headings4[2];
+
+window.addEventListener('resize', windowResized);
+
+function windowResized(){
+    heading4First.style.backgroundColor = 'gold';
+    heading4Second.style.backgroundColor = 'dodgerblue';
+    heading4Third.style.backgroundColor = 'seagreen';
+}
+
+
